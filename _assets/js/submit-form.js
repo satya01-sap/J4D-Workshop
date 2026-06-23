@@ -1,0 +1,2 @@
+// stub
+function handleFormSubmission(event) {}

@@ -1,0 +1,2 @@
+- [Exercise 1: Generate a Full-Stack CAP Application Using Joule](pages/ex1-cap-app-gen/README.md)
+- [Exercise 2: Generate a RAP Transactional App from Scratch](pages/ex2-rap-app-gen/README.md)
