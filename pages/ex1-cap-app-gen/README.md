@@ -31,16 +31,29 @@ By the end of this exercise, you will have:
 <details>
   <summary>🔵 Click to expand!</summary>
 
-1. Open **SAP Business Application Studio (BAS)** from your BTP subaccount cockpit.
+1. Open **SAP Business Application Studio (BAS)**
 
-2. Open an existing **Full Stack Cloud Application** dev space, or create a new one if needed.
+2. Create a new dev space with the following details, then click **Create Dev Space**:
 
-3. From the **Welcome** screen, create a new project folder named **`EmployeeDiscount`**.
+   | Field | Value |
+   |-------|-------|
+   | Name | `USERXX` |
+   | App Type | **Full-Stack Application Using Productivity Tools** |
+
+   ![Create Dev Space](./img/Create-Dev-Space.png)
+   
+2. Open the created dev space.
+
+3. From the **Welcome** screen, click **Create Project** and name the project **`EmployeeDiscount`**.
+
+   ![Create Project](./img/Create-Project_2.png)
 
    > ℹ️ **Tip:** You can also open a terminal (`Ctrl + ~` / `Cmd + ~`) and run:
    > ```sh
    > mkdir EmployeeDiscount && cd EmployeeDiscount
    > ```
+
+4. Once the project is created, open it in the editor.
 
 </details>
 
@@ -60,6 +73,8 @@ By the end of this exercise, you will have:
    - **Mac:** `Cmd + Shift + P`
 
 2. Type **`Fiori: Project Accelerator`** and select it from the list.
+
+   ![Create Project](./img/Project-Accelarator.png)
 
 3. Copy and paste the prompt below into the chat input, then press **Enter**:
 
@@ -195,20 +210,20 @@ By the end of this exercise, you will have:
 
 [^Top of page](#introduction)
 
-> Use the Joule `/cap-gen-logic` annotation to add server-side validation: `EmployeeID` must be a 10-digit number (digits only).
+> Use the Joule `/cap-app-logic` annotation to add server-side validation: `EmployeeID` must be a 10-digit number (digits only).
 
 <details>
   <summary>🔵 Click to expand!</summary>
 
-> ℹ️ **Note:** The `/cap-gen-logic` option only appears in Joule when a `.js` service handler file exists in the `srv/` folder. Complete step 1 first if you do not see it.
+> ℹ️ **Note:** The `/cap-app-logic` option only appears in Joule when a `.js` service handler file exists in the `srv/` folder. Complete step 1 first if you do not see it.
 
 1. In the Explorer, right-click on the **`srv/`** folder and select **New File**. Name it **`service.js`**.
 
-   This file acts as the CAP service handler. Creating it activates the `/cap-gen-logic` annotation in Joule.
+   This file acts as the CAP service handler. Creating it activates the `/cap-app-logic` annotation in Joule.
 
 2. Open **Joule 💎** by clicking its icon in the sidebar, or via the Command Palette: `Joule: Open`.
 
-3. Select the **`/cap-gen-logic`** annotation and paste the following prompt:
+3. Select the **`/cap-app-logic`** annotation and paste the following prompt:
 
    ```prompt
    Validate the employee ID before creating an employee record.
@@ -220,6 +235,9 @@ By the end of this exercise, you will have:
 5. Stop and restart the application from the Debug panel, then test the validation:
    - **Invalid:** Try creating an employee with ID `EMP001` — the request should be rejected with an error message.
    - **Valid:** Try creating one with ID `9900000001` — it should be saved successfully.
+
+
+![Create Project](./img/Joule-add-cap-logic.png)   
 
 </details>
 
@@ -264,7 +282,7 @@ Congratulations! In this exercise you used **Joule for Developers 💎** to:
 
 - Generate a full-stack **CAP application** — entities, associations, OData service, and Fiori Elements UI — from a single natural language prompt.
 - Preview and verify the application running locally in BAS.
-- Add **server-side validation logic** using the Joule `/cap-gen-logic` annotation.
+- Add **server-side validation logic** using the Joule `/cap-app-logic` annotation.
 - Regenerate **test data** using the Joule `/cap-data-gen` annotation to match the new validation rules.
 
 This demonstrates how Joule accelerates CAP development by automating boilerplate generation, while still letting developers guide and customize the output through natural language.
